@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 # Load the pre-trained models
 destination_model = joblib.load('destination_model.pkl')
 restaurant_model = joblib.load('restaurant_model.pkl')
-destination_data = pd.read_csv('D:\AfiaDSProject\destinations.csv') 
+destination_data = pd.read_csv('C:/Users/Home/Documents/GitHub/Intelligent-Travel-Planner/destinations.csv') 
 
 # Streamlit user input form
 # Custom CSS for styling
@@ -109,23 +109,23 @@ with st.expander("Prediction Results"):
 
     
 # option of id:
-user_entered_id = st.number_input("Enter your Destination ID", min_value=1, max_value=500, step=1)
+# user_entered_id = st.number_input("Enter your Destination ID", min_value=1, max_value=500, step=1)
 
-# Display destination name and restaurant based on entered ID
-if user_entered_id:
-    # Manually add the entered destination_id to the user input
-    user_input_with_id = user_df.copy()
-    user_input_with_id['destination_id'] = user_entered_id  # Add the entered ID to the dataframe
+# # Display destination name and restaurant based on entered ID
+# if user_entered_id:
+#     # Manually add the entered destination_id to the user input
+#     user_input_with_id = user_df.copy()
+#     user_input_with_id['destination_id'] = user_entered_id  # Add the entered ID to the dataframe
 
     # Use the restaurant model to predict restaurant for entered ID
-    user_restaurant = restaurant_model.predict(user_input_with_id)
+    # user_restaurant = restaurant_model.predict(user_input_with_id)
 
-    # Get the destination name from the mapping
-    user_destination_name = destination_mapping.get(user_entered_id, "Unknown Destination")
+    # # Get the destination name from the mapping
+    # user_destination_name = destination_mapping.get(user_entered_id, "Unknown Destination")
 
-    # Display results
-    st.subheader(f"Destination Name: {user_destination_name}")
-    st.subheader(f"Famous Restaurant: {user_restaurant[0]}")
+    # # Display results
+    # st.subheader(f"Destination Name: {user_destination_name}")
+    # st.subheader(f"Famous Restaurant: {user_restaurant[0]}")
 
 submit_button = st.button("Submit", key="submit", help="Click to get predictions!")
 if submit_button:
