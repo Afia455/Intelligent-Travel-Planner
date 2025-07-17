@@ -27,8 +27,8 @@ pytz==2025.2
 referencing==0.36.2
 requests==2.32.4
 rpds-py==0.26.0
-scikit-learn==1.6.1
-scipy==1.11.4  # Or another stable version
+scikit-learn==1.6.1  
+# Or another stable version scipy==1.11.4
 
 six==1.17.0
 smmap==5.0.2
