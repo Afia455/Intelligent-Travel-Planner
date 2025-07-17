@@ -9,7 +9,13 @@ from sklearn.ensemble import RandomForestClassifier
 # Load the pre-trained models
 destination_model = joblib.load('destination_model.pkl')
 restaurant_model = joblib.load('restaurant_model.pkl')
-destination_data = pd.read_csv('C:/Users/Home/Documents/GitHub/Intelligent-Travel-Planner/destinations.csv') 
+# destination_data = pd.read_csv('C:/Users/Home/Documents/GitHub/Intelligent-Travel-Planner/destinations.csv')
+import os
+
+# Safe path to file relative to script location
+csv_path = os.path.join(os.path.dirname(__file__), 'destinations.csv')
+destination_data = pd.read_csv(csv_path)
+ 
 
 # Streamlit user input form
 # Custom CSS for styling
